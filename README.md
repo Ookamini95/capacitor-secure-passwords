@@ -5,7 +5,7 @@ Short plugin that exposes native secure layer APIs
 ## Install
 
 ```bash
-npm install capacitor-secure-passwords
+npm install github:Ookamini95/capacitor-secure-passwords
 npx cap sync
 ```
 
@@ -24,7 +24,7 @@ npx cap sync
 ### save(...)
 
 ```typescript
-save(options: { key: string; data: string; }) => Promise<{ success: boolean; }>
+save(options: { key: string; data: string; }) => Promise<void>
 ```
 
 Saves a password securely.
@@ -35,8 +35,6 @@ The encryption is handled natively using the platform's secure storage.
 | Param         | Type                                        | Description                                             |
 | ------------- | ------------------------------------------- | ------------------------------------------------------- |
 | **`options`** | <code>{ key: string; data: string; }</code> | The options including the key and the password to save. |
-
-**Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
 --------------------
 

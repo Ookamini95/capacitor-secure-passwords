@@ -28,9 +28,7 @@ public class SecurePasswordPlugin extends Plugin {
 
         try {
         securePassword.savePassword(key, data);
-        JSObject ret = new JSObject();
-        ret.put("success", true);
-        call.resolve(ret);
+        call.resolve();
         } catch (Exception e) {
         call.reject("Error saving password: " + e.getLocalizedMessage(), e);
         }

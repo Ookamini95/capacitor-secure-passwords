@@ -10,7 +10,7 @@ export interface SecurePasswordPlugin {
      * @param options The options including the key and the password to save.
      * @returns A promise that resolves if the password is saved successfully.
      */
-    save(options: { key: string; data: string }): Promise<{ success: boolean }>;
+    save(options: { key: string; data: string }): Promise<void>;
 
     /**
      * Reads a securely stored password.

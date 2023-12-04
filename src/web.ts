@@ -6,8 +6,13 @@ export class SecurePasswordWeb
   extends WebPlugin
   implements SecurePasswordPlugin
 {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async save(options: { key: string, data: string }): Promise<void> {
+    options
+    throw this.unimplemented('Not implemented on web')
+  }
+
+  async read(options: { key: string; }): Promise<{ value: string; }> {
+    options
+    throw this.unimplemented('Not implemented on web')
   }
 }
