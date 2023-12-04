@@ -1,6 +1,6 @@
 # capacitor-secure-passwords
 
-Short plugin that exposes native secure layer APIs
+Short plugin that exposes native secure layer APIs (KeyChain and KeyStore) to save simple key/value encrypted pairs
 
 ## Install
 
@@ -8,6 +8,40 @@ Short plugin that exposes native secure layer APIs
 npm install github:Ookamini95/capacitor-secure-passwords
 npx cap sync
 ```
+
+## How to use
+
+Manually import the plugin like so
+```js
+    import { SecurePassword } from 'capacitor-secure-passwords';
+```
+
+and use it like this
+
+```js
+    async saveSecretPassword() {
+        try {
+            await SecurePassword.save({
+                key: "secret-key",
+                data: "very-secret" // ... JSON.stringify({accessToken, refreshToken})
+                })
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    async showSecret() {
+        try {
+            const { value } = await SecurePassword.read({
+                key: "secret-key"
+            })
+            console.log(value)
+        } catch (error) {
+            console.log(JSON.stringify(error))
+        }
+    }
+```
+
 
 ## API
 
