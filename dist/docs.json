@@ -1,0 +1,65 @@
+{
+  "api": {
+    "name": "SecurePasswordPlugin",
+    "slug": "securepasswordplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "save",
+        "signature": "(options: { key: string; data: string; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "The options including the key and the password to save.",
+            "type": "{ key: string; data: string; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options The options including the key and the password to save."
+          },
+          {
+            "name": "returns",
+            "text": "A promise that resolves if the password is saved successfully."
+          }
+        ],
+        "docs": "Saves a password securely.\r\n\r\nThis method encrypts and stores a password using the specified key.\r\nThe encryption is handled natively using the platform's secure storage.",
+        "complexTypes": [],
+        "slug": "save"
+      },
+      {
+        "name": "read",
+        "signature": "(options: { key: string; }) => Promise<{ value: string; }>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "The options including the key to retrieve the password for.",
+            "type": "{ key: string; }"
+          }
+        ],
+        "returns": "Promise<{ value: string; }>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options The options including the key to retrieve the password for."
+          },
+          {
+            "name": "returns",
+            "text": "A promise that resolves with the password, or rejects if not found."
+          }
+        ],
+        "docs": "Reads a securely stored password.\r\n\r\nThis method retrieves and decrypts a password associated with the specified key.\r\nThe decryption is handled natively using the platform's secure storage.",
+        "complexTypes": [],
+        "slug": "read"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
